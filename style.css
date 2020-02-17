@@ -1,0 +1,47 @@
+html{
+
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+}
+
+.pagination-wrapper{
+
+}
+.students{
+    /*background: red;*/
+    border:1px solid #666666;
+    margin-bottom: 20px;
+}
+.students>ul{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    height: 300px;
+    overflow: auto;
+
+}
+.students>ul li{
+    padding: 10px ;
+    font-size: 18px;
+    border-bottom: 1px solid #666666;
+}
+
+
+.pagination-wrapper a{
+    color: black;
+    padding: 5px 10px;
+    text-decoration: none;
+}
+.pagination-wrapper a.active{
+    background-color: blue;
+    color: #fff;
+}
