@@ -24,7 +24,8 @@ getStudents();
 function showStudents(students) {
     studentsArr.push(...students);
     ul = document.createElement('ul');
-    ul.classList.add('students')
+    ul.classList.add('students');
+    setPaginator(students,currentPage,per_page)
 
 //     students.forEach(student => {
 //         li = document.createElement('li');
@@ -41,9 +42,7 @@ function showStudents(students) {
     // console.log(studentsDiv)
 
 }
-
-function pageClick(value, students, currentPage, per_page) {
-    currentPage = +value
+function setPaginator(students,currentPage,per_page) {
     let begin = ((currentPage - 1) * per_page);
     let end = begin + per_page;
     let paginatedStudents = students.slice(begin, end);
@@ -57,7 +56,7 @@ function pageClick(value, students, currentPage, per_page) {
 <span class="language">${student.language}</span><br>`;
         ul.appendChild(li);
 
-      let a =  document.getElementsByTagName('li');
+        let a =  document.getElementsByTagName('li');
 
     });
     if(studentsDiv.hasChildNodes()){
@@ -67,7 +66,11 @@ function pageClick(value, students, currentPage, per_page) {
     }
 
     studentsDiv.appendChild(ul)
+}
 
+function pageClick(value, students, currentPage, per_page) {
+    currentPage = +value;
+    setPaginator(students,currentPage,per_page)
 }
 
 for (let page of page_link) {
